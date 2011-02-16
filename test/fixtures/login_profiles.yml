@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  auth_type: MyString
+  username: MyString
+  encrypted_password: MyString
+  key_path: MyString
+
+two:
+  name: MyString
+  auth_type: MyString
+  username: MyString
+  encrypted_password: MyString
+  key_path: MyString
