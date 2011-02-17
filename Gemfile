@@ -7,10 +7,14 @@ gem 'rails', '3.0.4'
 
 gem 'sqlite3'
 gem 'mysql2'
-#For authentication
 gem 'devise'
-
 gem 'haml'
+gem 'jammit'
+
+
+# For backing up devices
+gem 'net-tftp'
+gem 'net-ssh'
 # Use unicorn as the web server
 # gem 'unicorn'
 

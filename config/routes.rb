@@ -43,6 +43,8 @@ Hoplite::Application.routes.draw do
   #     end
   #   end
 
+  resources :devices do
+  end
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController

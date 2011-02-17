@@ -1,0 +1,189 @@
+@import "common"
+
+body
+  background-color: rgba(100, 100, 100, 1)
+  color: darken($white, 10%)
+  font-family: Helvetica, Arial, sans-serif
+  font-size: 1em
+
+h1, h2, h3, h4, h5, h6
+  color: darken($white, 10%)
+
+h2
+  font-size: 2em
+  margin-bottom: .5em
+
+h3
+  margin-bottom: .5em
+
+p
+  line-height: 1.5em
+  margin-bottom: 1em
+
+  &.small
+    font-size: .75em
+
+input.button
+  @include button
+
+a
+  color: $white
+  text-decoration: none
+
+  &.button
+    @include button
+
+ul
+  margin-bottom: 1em
+
+  li
+    margin-bottom: .5em
+
+    span
+      color: lighten($black, 60%)
+      font-weight: bold
+
+table
+  width: 100%
+
+  tr
+    th
+      border-bottom: 1px solid lighten($black, 80%)
+      padding: 10px
+      text-align: left
+
+    td
+      padding: 10px
+
+  tr:nth-child(even)
+    background-color: rgba(255, 255, 255, .25)
+
+#header
+  background-color: lighten($black, 25%)
+  height: 1.35em
+  margin-bottom: 1em
+  padding: .25em
+
+  ul#navigation
+    li
+      border-right: 1px solid lighten($black, 35%)
+      color: darken($white, 25%)
+      display: inline-block
+      font-size: .75em
+      margin-right: .75em
+      padding-right: 1em
+
+      &:last-child
+        border-right: 0 none
+
+      a
+        color: darken($white, 25%)
+        text-decoration: none
+
+        &:hover
+          color: $white
+
+  input
+    border: 0 none
+    padding: 2px 5px
+    width: 15em
+
+#content
+  margin-bottom: 3em
+
+  #flash_messages
+    margin-bottom: 1em
+
+    p
+      margin: 0
+      padding: .5em 1em
+
+      &.error
+        background-color: rgba(255, 0, 0, .25)
+
+      &.notice
+        background-color: rgba(255, 255, 0, .25)
+
+      &.warning
+        background-color: rgba(255, 138, 0, .25)
+
+  .asset-summary
+    background-color: $white
+    border: 1px solid lighten($black, 90%)
+    margin-bottom: 1em
+    padding: 10px
+    background: -moz-linear-gradient(top, #ffffff 75%, #e5e5e5 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(75%,#ffffff), color-stop(100%,#e5e5e5))
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 )
+    -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4)
+    -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4)
+
+    h3
+      font-size: 1em
+      margin-bottom: .25em
+      overflow: hidden
+      white-space: nowrap
+
+      a
+        color: #C60
+
+    img
+      display: block
+      margin-bottom: .5em
+
+    p.tags
+      color: lighten($black, 60%)
+      font-size: .75em
+      height: 1.25em
+      margin: 0
+      overflow: hidden
+
+      a
+        color: lighten($black, 60%)
+
+  .asset-download
+    background-color: $white
+    border: 1px solid lighten($black, 90%)
+    margin-bottom: 1em
+    padding: 10px
+    width: 400px
+    background: -moz-linear-gradient(top, #ffffff 75%, #e5e5e5 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(75%,#ffffff), color-stop(100%,#e5e5e5))
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 )
+    -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2)
+    -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2)
+
+    img
+      @include box-shadow(0px, 1px, 5px, lighten($black, 90%))
+
+  #related-assets
+    .grid_12
+      border-top: 1px solid lighten($black, 90%)
+      margin-top: 1em
+      padding-top: 1em
+
+  .pagination
+    margin-top: 2em
+    text-align: center
+
+fieldset
+  margin-bottom: 2em
+
+  &.buttons
+    margin-left: 155px
+
+  ol
+    li
+      margin-bottom: .5em
+
+      label
+        display: inline-block
+        width: 150px
+
+#footer
+  .container_12
+    border-top: 1px solid lighten($black, 90%)
+    color: lighten($black, 80%)
+    font-size: .75em
+    margin-top: 3em
+    padding: 1em 0
