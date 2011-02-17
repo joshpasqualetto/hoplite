@@ -2,6 +2,9 @@ Hoplite::Application.routes.draw do
   devise_for :users
 
   get "home/index"
+  resources :devices
+  resources :login_profiles
+  resources :backup_profiles
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -43,14 +46,6 @@ Hoplite::Application.routes.draw do
   #     end
   #   end
 
-  resources :devices do
-  end
-
-  resources :login_profiles do
-  end
-
-  resources :backup_profiles do
-  end
   # Sample resource route within a namespace:
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController

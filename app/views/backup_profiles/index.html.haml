@@ -9,6 +9,8 @@
         %td name
         - @backup_profiles.each do |backup_profile|
           %tr
-            %td= backup_profile.name
+            %td= link_to(backup_profile.name, backup_profile_path(backup_profile))
+            %td= link_to("Edit", edit_backup_profile_path(backup_profile))
+            %td= link_to("X", backup_profile_path(backup_profile), :method => :delete)
 .grid_4
   = link_to("New Backup Profile", new_backup_profile_path)
