@@ -10,6 +10,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'haml'
 gem 'jammit'
+gem 'formtastic'
 
 
 # For backing up devices

@@ -1,0 +1,14 @@
+%h1 Backup Profile list
+
+.grid_8
+  - if @backup_profiles.empty?
+    %p= raw("No backup profiles have been entered yet, #{link_to('Please add a backup profile', new_backup_profile_path)}.")
+  - else 
+    %table
+      %tr
+        %td name
+        - @backup_profiles.each do |backup_profile|
+          %tr
+            %td= backup_profile.name
+.grid_4
+  = link_to("New Backup Profile", new_backup_profile_path)

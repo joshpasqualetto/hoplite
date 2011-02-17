@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(:version => 20110216215757) do
   end
 
   create_table "devices", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "location"
+    t.integer  "backup_profile_id"
+    t.integer  "login_profile_id"
+    t.boolean  "enabled"
+    t.datetime "lastbackup_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

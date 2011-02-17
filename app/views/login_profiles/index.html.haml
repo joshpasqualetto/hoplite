@@ -1,0 +1,14 @@
+%h1 Login Profile List
+
+.grid_8
+  - if @login_profiles.empty?
+    %p= raw("No Login Profiles have been entered yet, #{link_to('Please add a Login Profile', new_login_profile_path)}.")
+  - else 
+    %table
+      %tr
+        %td name
+        - @login_profiles.each do |login_profile|
+          %tr
+            %td= login_profile.name
+.grid_4
+  = link_to("New Login Profile", new_login_profile_path)

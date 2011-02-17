@@ -1,3 +1,14 @@
-%h1 List of devices
-- @devices.each do |device|
-  %p= device.name
+%h1 Device list
+
+.grid_8
+  - if @devices.empty?
+    %p= raw("No devices have been entered yet, #{link_to('Please add a device', new_device_path)}.")
+  - else 
+    %table
+      %tr
+        %td name
+        - @devices.each do |device|
+          %tr
+            %td= device.name
+.grid_4
+  = link_to("New Device", new_device_path)
