@@ -1,2 +1,6 @@
-%h1= @backup_profile.name
+%p= @backup_profile.name
 %p= @backup_profile.description
+%p= @backup_profile.script
+
+
+%p= raw("Back to #{link_to('Backup Profiles', backup_profiles_path)}")

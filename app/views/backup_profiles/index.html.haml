@@ -10,7 +10,7 @@
         - @backup_profiles.each do |backup_profile|
           %tr
             %td= link_to(backup_profile.name, backup_profile_path(backup_profile))
-            %td= link_to("Edit", edit_backup_profile_path(backup_profile))
-            %td= link_to("X", backup_profile_path(backup_profile), :method => :delete)
+            %td.text-right= link_to("Edit", edit_backup_profile_path(backup_profile))
+            %td.text-right= link_to("Delete", backup_profile_path(backup_profile), :confirm => "Are you sure?", :method => :delete)
 .grid_4
   = link_to("New Backup Profile", new_backup_profile_path)

@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20110216215757) do
     t.string   "username"
     t.string   "encrypted_password"
     t.string   "key_path"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,83 @@
+ver 03.4.01Tc3
+!
+!
+!
+!
+vlan 1 name DEFAULT-VLAN by port
+!
+vlan 2 by port
+ untagged ethe 1 
+ router-interface ve 2
+!
+vlan 8 by port
+ untagged ethe 2 to 4 
+ router-interface ve 8
+!
+vlan 12 by port
+ untagged ethe 9 to 48 
+ router-interface ve 12
+!
+vlan 90 by port
+ untagged ethe 5 
+ router-interface ve 90
+!
+vlan 91 by port
+ untagged ethe 6 to 8 
+ router-interface ve 91
+!
+!
+aaa authentication login default enable
+enable password-display
+enable telnet authentication
+enable telnet password 8 $1$Nf...oW3$O8ejAI4g6F2vPRBe.tY4i.
+enable super-user-password 8 $1$Dj2..ja3$uG6zHhcIFqu5Yay8qrtQX.
+hostname swc01
+ip default-network 10.47.1.1/24
+ip directed-broadcast
+ip dns domain-name cpm.cardplayer.com
+ip dns server-address 10.47.12.19 10.47.12.18
+no ip load-sharing
+ip route 0.0.0.0 0.0.0.0 10.47.1.1
+!
+ip router-id 10.47.1.1
+logging host 10.47.12.10
+username admin password 8 $1$9F3..lp1$9ZMKyNAD7eLruvBHyz1g.0
+password-change any
+snmp-server community 1 $+3^D68 ro
+snmp-server enable vlan 2
+web-management https
+web-management allow-no-password
+web-management enable vlan 12
+interface ethernet 50
+ mdi-mdix mdix
+!
+interface ve 2
+ port-name Uplink
+ ip address 10.47.1.2 255.255.255.0
+!
+interface ve 8
+ port-name Switches
+ ip address 10.47.8.1 255.255.252.0
+ ip directed-broadcast
+!
+interface ve 12
+ port-name Server
+ ip address 10.47.12.1 255.255.255.0
+ ip directed-broadcast
+!
+interface ve 90
+ port-name VPN
+ ip address 10.47.90.1 255.255.255.0
+ ip directed-broadcast
+!
+interface ve 91
+ port-name Security
+ ip address 10.1.0.1 255.255.255.0
+!
+!
+!
+!
+!
+!
+!
+end

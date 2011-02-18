@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  device_id: 1
+  login_profile_id: 1
+  backup_profile_id: 1
+  message: MyText
+  failed: false
+
+two:
+  device_id: 1
+  login_profile_id: 1
+  backup_profile_id: 1
+  message: MyText
+  failed: false

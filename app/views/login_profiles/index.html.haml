@@ -9,6 +9,8 @@
         %td name
         - @login_profiles.each do |login_profile|
           %tr
-            %td= login_profile.name
+            %td= link_to(login_profile.name, login_profile_path(login_profile))
+            %td.text-right= link_to("Edit", edit_login_profile_path(login_profile))
+            %td.text-right= link_to("Delete", login_profile_path(login_profile), :confirm => "Are you sure?", :method => :delete)
 .grid_4
   = link_to("New Login Profile", new_login_profile_path)

@@ -12,7 +12,6 @@ gem 'haml'
 gem 'jammit'
 gem 'formtastic'
 
-
 # For backing up devices
 gem 'net-tftp'
 gem 'net-ssh'
