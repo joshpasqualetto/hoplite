@@ -1,14 +1,26 @@
 %h1 Device list
+.grid_12
+  %p.text-right= link_to("New Device", new_device_path)
 
-.grid_8
+.grid_12
   - if @devices.empty?
     %p= raw("No devices have been entered yet, #{link_to('Please add a device', new_device_path)}.")
   - else 
     %table
       %tr
-        %td name
+        %td Name
+        %td Location
+        %td Hostname
+        %td Backup Profile
+        %td Login Profile
+        %td Enabled?
         - @devices.each do |device|
           %tr
-            %td= device.name
-.grid_4
-  = link_to("New Device", new_device_path)
+            %td= link_to(device.name, device_path(device))
+            %td= device.location
+            %td= device.hostname
+            %td= device.backup_profile.name rescue 'None'
+            %td= device.login_profile.name rescue 'None'
+            %td= device.enabled
+            %td.text-right= link_to("Edit", edit_device_path(device))
+            %td.text-right= link_to("Delete", device_path(device), :confirm => "Are you sure?", :method => :delete)

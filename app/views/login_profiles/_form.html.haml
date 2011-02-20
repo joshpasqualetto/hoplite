@@ -1,5 +1,5 @@
 = semantic_form_for(@login_profile, :html => { :multipart => true }) do |f|
   = f.semantic_errors
-  = f.inputs(:name, :key_path, :username)
+  = f.inputs(:name, :key_path, :username, :script)
   = f.input(:auth_type, :as => :select, :collection => BackupMethod.private_instance_methods)
   = f.buttons

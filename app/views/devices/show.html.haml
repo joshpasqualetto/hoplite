@@ -1,0 +1,8 @@
+%p= @device.name
+%p= @device.description
+%p= @device.location
+%p= @device.hostname
+%p= @device.backup_profile.name rescue 'No backup Profile'
+%p= @device.login_profile.name rescue 'No Login Profile'
+%p= @device.enabled
+%p= @device.lastbackup_at

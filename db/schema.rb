@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110216215757) do
+ActiveRecord::Schema.define(:version => 20110218210915) do
+
+  create_table "backup_logs", :force => true do |t|
+    t.integer  "device_id"
+    t.integer  "login_profile_id"
+    t.integer  "backup_profile_id"
+    t.text     "message"
+    t.boolean  "failed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "backup_profiles", :force => true do |t|
     t.string   "name"
@@ -24,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20110216215757) do
     t.string   "name"
     t.string   "description"
     t.string   "location"
+    t.string   "hostname"
     t.integer  "backup_profile_id"
     t.integer  "login_profile_id"
     t.boolean  "enabled"
@@ -39,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20110216215757) do
     t.string   "encrypted_password"
     t.string   "key_path"
     t.text     "description"
+    t.text     "script"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
