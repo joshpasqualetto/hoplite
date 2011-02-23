@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class BackupLogsTest < ActiveSupport::TestCase
+class BackupLogTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   test "the truth" do
     assert true

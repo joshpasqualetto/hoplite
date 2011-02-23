@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110218210915) do
+ActiveRecord::Schema.define(:version => 20110222225111) do
 
   create_table "backup_logs", :force => true do |t|
     t.integer  "device_id"
@@ -51,6 +51,13 @@ ActiveRecord::Schema.define(:version => 20110218210915) do
     t.string   "key_path"
     t.text     "description"
     t.text     "script"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "settings", :force => true do |t|
+    t.string   "name"
+    t.text     "value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
